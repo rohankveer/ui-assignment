@@ -1,0 +1,228 @@
+/* Loader icon css */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader{
+    border: 8px solid #000000;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    margin: 100px auto 0 auto;
+    animation: spin 2s linear infinite;
+}
+
+/* Loader icon css ends */
+
+.rv-list-border{
+     padding: 10px;
+     background-color: #fff;
+}
+
+.rv-user-wrapper{
+    
+    .rv-loader{
+        @extend .loader;
+        height: 70px;
+        width: 70px;
+    }
+    .rv-userdata-wrapper{
+        margin: 5% auto !important;
+        width: 60%;
+        .rv-user-albums-wrapper{
+            margin-top: 40px;
+            .rv-album-art{
+                height: 70px;
+                width: 70px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            .rv-comment-group{
+                .rv-album-art{
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 20px;
+                }
+            }
+            .rv-album-left{
+                float: left;
+                margin-right: 10px;
+            }
+        }
+        .media{
+            @extend .rv-list-border;
+        }
+        .list-group{
+            @extend .rv-list-border;
+            overflow: hidden;
+        }
+        .rv-album-description{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .rv-comments-wrapper{
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+    }
+    .rv-userdata-left{
+        img{
+            width: 200px;
+        }
+    }
+    .rv-userdata-right{
+        p{
+            margin-bottom: 0;
+        }
+    }
+    .list-group.rv-comment-group{
+        margin-bottom: 0;
+        border: 1px solid #f4f4f4;
+        border-radius: 0;
+    }
+}
+
+.main_wrapper{
+    
+    header{
+        text-align: center;
+        padding: 25px;
+        background-color: #222428;
+        
+        .rv-search-wrapper{
+            position: relative;
+            width: 50%;
+            margin: 0 auto;
+            
+            .fa-search{
+                &:before{
+                    position: absolute;
+                    left: 15px;
+                    top: 12px;
+                    font-size: 18px;
+                    color: #fff;
+                }                
+            }
+        }
+        
+        #rv-search{
+                -webkit-border-radius: 25px;
+                -moz-border-radius: 25px;
+                -ms-border-radius: 25px;
+                -o-border-radius: 25px;
+                border-radius: 25px;
+                background: #36383d;
+                height: 40px;
+                width: 100%;
+                max-width: 850px;
+                margin: 0;
+                font-size: 100%;
+                color: rgba(255, 255, 255, 0.8);
+                letter-spacing: .7px;
+                padding: 0 2% 0 6%;
+                border: none;
+            
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    .rv-songs-wrapper{
+        padding: 30px;
+        overflow: hidden;
+        margin: 0 60px;
+    }
+    .rv-song-wrapper{
+        padding: 10px;
+        background-color: #fff;
+    }
+    .rv-song-thumbnail{
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+    }
+    .rv-songs-row{
+        margin-bottom: 20px;
+    }
+    .rv-song-details{
+        .rv-song-title{
+            display: block;
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-top: 10px;
+            color: #4a4141;
+        }
+    }
+    .rv-loader{
+        @extend .loader;
+        width: 100px;
+        height: 100px;
+    }
+    .search-dropdown{
+        display: none;
+    }
+    
+    /* css to change the scrollbar */
+    
+    .search-dropdown.search-dropdown-open::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 0;
+        background-color: #36383D;
+    }
+
+    .search-dropdown.search-dropdown-open::-webkit-scrollbar
+    {
+        width: 5px;
+        background-color: #36383D;
+    }
+
+    .search-dropdown.search-dropdown-open::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #57595f;
+    }
+    
+    /* scrollbar css ends */
+
+    .search-dropdown.search-dropdown-open{
+        display: block;
+        padding: 30px;
+        position: absolute;
+        z-index: 1;
+        background-color: #222428;
+        overflow-y: auto;
+        max-height: 450px;
+        width: 100%;
+        
+        .rv-songs-row{
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .fa-spinner.fa-pulse{
+            display: none;
+            position: absolute;
+            right: 15px;
+            top: 5px;
+        
+            &:before{
+                color: #fff;
+            }
+        }
+    .fa-spinner.fa-pulse.fa-spinner-show{
+        display: inline-block;
+    }
+}
+
+body{
+    background-color: #F4F4F4 !important;
+}
