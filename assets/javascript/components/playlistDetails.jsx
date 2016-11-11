@@ -115,9 +115,7 @@ let playlistDetails = React.createClass({
                                     <div className="rv-album-art" style={{"backgroundImage":'url(' + user_avatar + ')'}}></div>
                                 </div>
                                 <div className="rv-album-right">
-                                    <b>
-                                        {item.title}
-                                    </b>
+                                    <b><Link to={'/albums/' + item.id}>{item.title}</Link></b>
                                     <div className="rv-album-description">
                                         {item.description}
                                     </div>
