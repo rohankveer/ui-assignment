@@ -109,7 +109,7 @@ let albumDetails = React.createClass({
             
             let commentsTemplate =  this.state.album_comments.map((item, index) => {
                     return (
-                    <div className="list-group rv-comment-group">
+                    <div key={index} className="list-group rv-comment-group">
                             <div className="rv-album-left">
                                 <div className="rv-album-art" style={{"backgroundImage":'url(' + item.user.avatar_url + ')'}}></div>
                             </div>
