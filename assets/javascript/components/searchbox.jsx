@@ -9,6 +9,8 @@ if (typeof exports !== "undefined") {
   var classNames = require("classnames");
 }
 
+let searchRequest;
+
 let SearchBox = React.createClass({
 
     /* Set initial state variables */
@@ -61,17 +63,23 @@ let SearchBox = React.createClass({
     /* Function to accept user search input and fetch the artists */
     
     searchChange: function(event){
-            if( event.target.value != "" && this.isMounted()){
+        
+            /* wait till user stops typing */
+            let search_value = event.target.value;
+            clearTimeout(searchRequest);
+            searchRequest = setTimeout(()=>{
+                if( search_value != "" && this.isMounted()){
                 this.setState({
                     show_search_loader: true
                 });
-                SongsActions.getArtistByName(event.target.value);   
-            } else if(this.isMounted()){
-                this.setState({
-                      artist_list: [],
-                      is_search_open: false,
-                    });
-            }
+                    SongsActions.getArtistByName(search_value);   
+                } else if(this.isMounted()){
+                    this.setState({
+                          artist_list: [],
+                          is_search_open: false,
+                        });
+                }
+            },1000);
     },
     
     /* Function to generate search dropdown template */
